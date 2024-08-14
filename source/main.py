@@ -236,9 +236,11 @@ class App(ctk.CTk):
         config_path = os.path.join(os.path.dirname(sys.argv[0]), "resources", "config.json")
         resources_dir = os.path.join(os.path.dirname(sys.argv[0]), "resources")
 
+        print(os.path.expanduser('~'))
+
         default_config = {
             "theme": "Dark",
-            "lighthouse_console_path": r"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\tools\lighthouse\bin\win64\lighthouse_console.exe"
+            "lighthouse_console_path": os.path.join(os.path.expanduser('~'),".steam/steam/steamapps/common/SteamVR/tools/lighthouse/bin/linux64/lighthouse_console")
         }
 
         if not os.path.exists(resources_dir):
